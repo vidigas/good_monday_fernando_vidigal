@@ -1,4 +1,4 @@
-const solution  ={
+const solution = {
   title: 'Solution',
   articles: {
     a1: {

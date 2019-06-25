@@ -6,7 +6,7 @@ import Menu from '../components/molecules/Menu';
 
 import Instructions from '../components/templates/Instructions';
 import Solution from '../components/templates/Solution';
-import Tests from '../components/templates/Tests';
+import Calculator from './Calculator';
 
 const Container = styled.div`
   width: 100%;
@@ -62,7 +62,7 @@ const renderContent = (selected) => {
     case 'Solution':
       return <Solution />;
     case 'Calculator':
-      return <Tests />;
+      return <Calculator />;
     default:
       break;
   }

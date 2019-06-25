@@ -35,7 +35,7 @@ Menu.propTypes = {
 Menu.defaultProps = {
   items: ['Instructions', 'Solution', 'Calculator'],
   selectedItem: 'Instructions',
-  selectItem: () => console.log('crico'),
+  selectItem: () => console.log('click'),
 };
 
 export default Menu;

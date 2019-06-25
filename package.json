@@ -9,6 +9,7 @@
     "build": "webpack --progress --watch",
     "lint": "eslint src",
     "prettier": "prettier --config ./.prettierrc --write \"./**/*.jsx\"",
+    "test": "jest",
     "lint:fix": "eslint src --fix"
   },
   "dependencies": {
@@ -43,6 +44,7 @@
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.14.1",
+    "jest": "^24.8.0",
     "nodemon": "^1.18.4",
     "react-jss": "^8.6.1",
     "react-test-renderer": "^16.8.6",

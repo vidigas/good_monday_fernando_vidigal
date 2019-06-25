@@ -40,43 +40,26 @@ const handleChange = (setTextValue, e) => {
   setTextValue(e.target.value);
 };
 
-const renderTextInput = (isEditing, textValue, setTextValue, inputRef)  => {
-  if (isEditing) return (<TextInput 
-           type='text'
-           value={textValue}
-           ref={inputRef}
-           customStyle={ isEditing ? {backgroundColor: 'yellow'} : null}
-           onChange={(e) => handleChange(setTextValue, e)} />
-        );
-  else return <TextDiv> {textValue} </TextDiv>
-}
+const renderTextInput = (isEditing, textValue, setTextValue, inputRef) => {
+  if (isEditing) {
+    return (
+      <TextInput
+        type='text'
+        value={textValue}
+        ref={inputRef}
+        customStyle={isEditing ? { backgroundColor: 'yellow' } : null}
+        onChange={(e) => handleChange(setTextValue, e)}
+      />
+    );
+  } else return <TextDiv> {textValue} </TextDiv>;
+};
 
-const handleNewValue = (value, setResults, setPairs) => {
-  setPairs([1,2],[3,4],[5,6]);
-  setResults(12);
-}
-
-const TextInputGroup = () => {
-
-  const inputRef = useRef();
-
-  const handleEditingClick = () => {
-    setEditing(!isEditing);
-  }
-
-  useEffect(() => {
-    if (isEditing) inputRef.current.focus();
-    else handleNewValue(textValue, setResults, setPairs);
-  }, [isEditing]);
-
-
+const TextInputGroup = ({ isEditing, textValue, setTextValue, inputRef, handleEditClick }) => {
   return (
     <Container>
       <Name> INPUT : </Name>
-      <InputWrapper>
-        {renderTextInput(isEditing, textValue, setTextValue, inputRef)}
-      </InputWrapper>
-      <Button onClick={handleEditingClick}> {isEditing ? 'RUN' : 'EDIT'}</Button>
+      <InputWrapper>{renderTextInput(isEditing, textValue, setTextValue, inputRef)}</InputWrapper>
+      <Button onClick={handleEditClick}> {isEditing ? 'RUN' : 'EDIT'}</Button>
     </Container>
   );
 };

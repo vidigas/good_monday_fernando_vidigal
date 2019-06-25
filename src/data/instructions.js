@@ -1,4 +1,4 @@
-const instructions =  {
+const instructions = {
   title: 'Developer Coding Test',
   paragraphs: {
     p1: 'You are given a list of integers, both positive and negative. Each integer in the list must either be paired with another element in the list or be a single element. Once the elements have been paired, the integers in the pairs are multiplied and the results are summed up - the sum will include the single elements.',
