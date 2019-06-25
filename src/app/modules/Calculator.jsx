@@ -80,7 +80,7 @@ const Calculator = () => {
       />
       <ErrorMessage customStyle={inputError ? { display: 'block' } : null}> * Invalid Input </ErrorMessage>
       <Results>
-        <ResultsCard sum={sum} pairs={pairs}/>
+        <ResultsCard sum={sum} pairs={pairs} />
       </Results>
     </Container>
   );

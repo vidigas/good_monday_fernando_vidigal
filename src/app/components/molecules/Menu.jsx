@@ -16,8 +16,9 @@ const List = styled.ul`
 `;
 
 const renderItems = (items, selectedItem, selectMenuItem) => {
-  console.log('selectedItem', selectedItem);
-  return items.map((item) => <MenuItem name={item} selectedItem={selectedItem} selectMenuItem={selectMenuItem} />);
+  return items.map((item) => (
+    <MenuItem name={item} selectedItem={selectedItem} selectMenuItem={selectMenuItem} key={item} />
+  ));
 };
 
 const Menu = ({ items, selectedItem, selectMenuItem }) => (

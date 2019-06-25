@@ -24,7 +24,6 @@ const MenuItem = ({ name, selectedItem, selectMenuItem }) => (
   <ItemWrapper
     customStyle={selectedItem === name ? { borderTop: '10px solid #e4613b' } : null}
     onClick={(e) => {
-      console.log('12345', name);
       selectMenuItem(name);
     }}
   >

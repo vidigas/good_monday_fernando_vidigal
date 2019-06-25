@@ -17,7 +17,7 @@ const TextTitle = styled.div`
 `;
 
 const renderParagraphs = () =>
-  Object.keys(instructionData.paragraphs).map((p) => <Paragraph>{instructionData.paragraphs[p]}</Paragraph>);
+  Object.keys(instructionData.paragraphs).map((p) => <Paragraph key={p}>{instructionData.paragraphs[p]}</Paragraph>);
 
 const Instructions = () => (
   <Container>

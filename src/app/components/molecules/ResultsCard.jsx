@@ -15,7 +15,7 @@ const Title = styled.div`
   font-weight: 300;
   text-align: center;
 `;
-  
+
 const Card = styled.div`
   width: 100%;
   margin: 24px;
@@ -33,38 +33,37 @@ const Label = styled.div`
   font-size: 18px;
   font-weight: 600;
   line-height: 20px;
-  margin: 20px ;
+  margin: 20px;
 `;
 
 const Value = styled.div`
   width: 200px;
   font-size: 20px;
-  margin: 20px ;
+  margin: 20px;
   line-height: 20px;
 `;
 
-const renderPairs = pairs => pairs.map(pair => {
-  console.log(pair);
-  return `  ( ${pair} )  `;
-});
+const renderPairs = (pairs) =>
+  pairs.map((pair) => {
+    console.log(pair);
+    return `  ( ${pair} )  `;
+  });
 
 const ResultsCard = ({ pairs, sum }) => {
-  console.log('iaeee', pairs)
   return (
-  <Container>
-    <Title>Results</Title>
-    <Space />
-    <Card>
-      <Label>Pairs :</Label>
-      <Value>{renderPairs(pairs)}</Value>
-    </Card>
-    <Card>
-      <Label>Sum</Label>
-      <Value>{sum}</Value>     
-    </Card>  
-  </Container>
-)
-
+    <Container>
+      <Title>Results</Title>
+      <Space />
+      <Card>
+        <Label>Pairs :</Label>
+        <Value>{renderPairs(pairs)}</Value>
+      </Card>
+      <Card>
+        <Label>Sum</Label>
+        <Value>{sum}</Value>
+      </Card>
+    </Container>
+  );
 };
 
 ResultsCard.propTypes = {
