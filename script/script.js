@@ -153,7 +153,7 @@ const calculateNegativeData = (list, hasZero) => {
   
   if (!list.length) return {sum: 0, pairs: hasZero ? [0] : [] };
   if (list.length === 1) {
-    if(hasZero) return {sum: 0, pairs: [list[0], 0]}
+    if(hasZero) return {sum: 0, pairs: [[list[0], 0]]}
     else return {sum: list[0], pairs: [list[0]]};
   } 
 

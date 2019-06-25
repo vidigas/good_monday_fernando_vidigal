@@ -26,6 +26,10 @@ describe('empty array and single element', () => {
 		expect(calculate([-12]).pairs).toEqual([-12]);
 	})
 
+	test('input = [-12, 0] -> pairs equals to (-12, 0)', () => {
+		expect(calculate([-12,0]).pairs).toEqual([[-12,0]])
+	})
+
 })
 
 describe('unordered positive Numbers with 1', () => {
@@ -98,4 +102,3 @@ describe('positive and negative numbers', () => {
   	expect(calculate([-4,-3,-2, 1, 2, 3, 4]).pairs).toEqual([ [ 4, 3 ], 2, 1, [ -3, -4 ], -2 ]);
 	});
 })
-
