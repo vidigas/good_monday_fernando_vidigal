@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Title from '../components/atoms/Title';
 import TextInputGroup from '../components/molecules/TextInputGroup';
 import ResultsCard from '../components/molecules/ResultsCard';
+import Calculate from '../../../script/script';
 
 const Container = styled.div`
   width: 100%;
@@ -24,13 +25,13 @@ const Results = styled.div`
   width: 100%;
   margin-top: 10px;
   height: 300px;
-  background-color: yellow;
+  background-color: #eff1f2;
 `;
 
 const Calculator = () => {
   const [textValue, setTextValue] = useState('[1,2,3,4,5]');
   const [isEditing, setEditing] = useState(false);
-  const [result, setResults] = useState(27);
+  const [sum, setSum] = useState(27);
   const [pairs, setPairs] = useState([[5, 4], [3, 2], [1]]);
   const [inputError, setError] = useState(false);
 
@@ -40,8 +41,10 @@ const Calculator = () => {
     setEditing(!isEditing);
   };
 
-  const calculate = (array) => {
-    console.log(array);
+  const calculator = (array) => {
+    var res = Calculate(array);
+    setSum(res.sum);
+    setPairs(res.pairs);
   };
 
   const handleNewValue = () => {
@@ -49,7 +52,7 @@ const Calculator = () => {
       const parsedString = JSON.parse(textValue);
       if (Array.isArray(parsedString)) {
         setError(false);
-        return calculate(parsedString);
+        return calculator(parsedString);
       } else {
         setError(true);
       }
@@ -77,7 +80,7 @@ const Calculator = () => {
       />
       <ErrorMessage customStyle={inputError ? { display: 'block' } : null}> * Invalid Input </ErrorMessage>
       <Results>
-        <ResultsCard />
+        <ResultsCard sum={sum} pairs={pairs}/>
       </Results>
     </Container>
   );

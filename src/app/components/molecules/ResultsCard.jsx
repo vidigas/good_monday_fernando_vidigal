@@ -15,6 +15,13 @@ const Title = styled.div`
   font-weight: 300;
   text-align: center;
 `;
+  
+const Card = styled.div`
+  width: 100%;
+  margin: 24px;
+  padding: 24px;
+  display: flex;
+`;
 
 const Space = styled.div`
   width: 100%;
@@ -22,30 +29,43 @@ const Space = styled.div`
 `;
 
 const Label = styled.div`
-  width: 120px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 16px;
-  margin: 20px auto;
+  width: 60px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 20px ;
 `;
 
 const Value = styled.div`
-  width: 120px;
-  font-size: 16px;
-  margin: 20px auto;
-  line-height: 16px;
+  width: 200px;
+  font-size: 20px;
+  margin: 20px ;
+  line-height: 20px;
 `;
 
-const ResultsCard = ({ pairs, sum }) => (
+const renderPairs = pairs => pairs.map(pair => {
+  console.log(pair);
+  return `  ( ${pair} )  `;
+});
+
+const ResultsCard = ({ pairs, sum }) => {
+  console.log('iaeee', pairs)
+  return (
   <Container>
     <Title>Results</Title>
     <Space />
-    <Label>Pairs</Label>
-    <Value>{pairs}</Value>
-    <Label>Sum</Label>
-    <Value>{sum}</Value>
+    <Card>
+      <Label>Pairs :</Label>
+      <Value>{renderPairs(pairs)}</Value>
+    </Card>
+    <Card>
+      <Label>Sum</Label>
+      <Value>{sum}</Value>     
+    </Card>  
   </Container>
-);
+)
+
+};
 
 ResultsCard.propTypes = {
   pairs: PropTypes.array,
@@ -53,8 +73,8 @@ ResultsCard.propTypes = {
 };
 
 ResultsCard.defaultProps = {
-  pairs: [[5, 4], [3, 2], [1]],
-  sum: 27,
+  pairs: [],
+  sum: 0,
 };
 
 export default ResultsCard;

@@ -162,4 +162,4 @@ const calculateNegativeData = (list, hasZero) => {
   return unpairedNegatives ? calculateUnpairedNegatives(list, hasZero) : calculatePairedNegatives(list, hasZero)
 };
 
-export { calculate }
+export default calculate;

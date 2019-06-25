@@ -30,7 +30,6 @@ const Content = styled.div`
   margin: 30px auto;
   background-color: white;
   height: auto;
-  overflow-y: scroll;
   padding-bottom: 20px;
   color: #313c52;
 

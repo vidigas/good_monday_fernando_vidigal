@@ -1,4 +1,4 @@
-import { sum , calculate } from './script';
+import calculate from './script';
 
 describe('empty array and single element', () => {
 	test('input = [] -> sum equals to 0', () => {
